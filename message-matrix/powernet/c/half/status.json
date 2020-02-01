@@ -1,0 +1,80 @@
+{
+    "description": "This message tells the instrument cluster and other modules how to display the current lane feedback system status.",
+    "id": 678,
+    "length": 8,
+    "timing": {
+        "cycle": 250,
+        "delay": 20
+    },
+    "signals": [
+        {
+            "name": "Telltale in instrument cluster",
+            "description": "Tells the instrument cluster the telltale icon to display.",
+            "offset": 5,
+            "length": 3,
+            "receivers": [ "IC" ],
+            "values": [
+                "Off", "White", "Green", "Yellow", "Yellow Flashing"
+            ]
+        },
+        {
+            "name": "Torque overlay intensity",
+            "description": "Tells the IC the current torque overlay intensity setting.",
+            "offset": 11,
+            "length": 3,
+            "receivers": [ "IC" ],
+            "values": [ "Off", "Low", "Medium", "High" ]
+        },
+        {
+            "name": "Torque overlay sensitivity",
+            "description": "Tells the IC the current torque overlay sensitivity setting.",
+            "offset": 8,
+            "length": 3,
+            "receivers": [ "IC" ],
+            "values": [ "Off", "1", "2", "3", "4", "5" ]
+        },
+        {
+            "name": "Display status",
+            "description": "Tells the IC the graphic to display..",
+            "offset": 16,
+            "length": 8,
+            "receivers": [ "IC" ]
+        },
+        {
+            "name": "Popup status",
+            "description": "Tells the IC the popup graphic to display",
+            "offset": 24,
+            "length": 8,
+            "receivers": [ "IC" ]
+        },
+        {
+            "name": "Chime type",
+            "description": "Tells the radio the type of chime to play through speakers.",
+            "offset": 36,
+            "length": 4,
+            "receivers": [ "CBC" ],
+            "values": [ "", "", "", "", "", "", "HALF" ]
+        },
+        {
+            "name": "Chime repitition rate",
+            "description": "Tells the radio the repition rate of the chime, 0 for continuous",
+            "offset": 32,
+            "length": 8,
+            "receivers": [ "CBC" ]
+        },
+        {
+            "name": "Chime on left side",
+            "description": "Tells the radio to chime through left speakers.",
+            "offset": 47,
+            "length": 1,
+            "receivers": [ "CBC" ]
+        },
+        {
+            "name": "Chime on right side",
+            "description": "Tells the radio to chime through right speakers.",
+            "offset": 46,
+            "length": 1,
+            "receivers": [ "CBC" ]
+        }
+    ]
+}

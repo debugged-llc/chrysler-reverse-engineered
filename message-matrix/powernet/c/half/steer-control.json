@@ -1,0 +1,63 @@
+{
+    "description": "This message tells the electric power steering module to apply torque overlay to the wheel.",
+    "id": 658,
+    "length": 6,
+    "timing": {
+        "cycle": 10,
+        "delay": 20
+    },
+    "signals": [
+        {
+            "name": "Drive style status acknowledgement",
+            "description": "Tells the EPS the drive style selection of the user.",
+            "offset": 0,
+            "length": 3,
+            "receivers": [ "EPS" ],
+            "values": [
+                "Normal", "City", "Sport", "Winter", "Sport Plus", "Trac Plus", "Reserved", "Signal Not Available"
+            ]
+        },
+        {
+            "name": "Torque overlay activation status",
+            "description": "Tells the EPS if torque overlay should be active or not.",
+            "offset": 3,
+            "length": 1,
+            "receivers": [ "EPS" ],
+            "values": [ "Not Activated", "Activated" ]
+        },
+        {
+            "name": "System status",
+            "description": "Indicates the status of the haptic lane feedback system.",
+            "offset": 4,
+            "length": 1,
+            "receivers": [ "EPS" ],
+            "values": [ "OK", "Faulted" ]
+        },
+        {
+            "name": "Steering overlay torque.",
+            "description": "The amount of torque to apply to the steering wheel.",
+            "offset": 5,
+            "length": 11,
+            "receivers": [ "EPS" ],
+            "number": {
+                "resolution": 0.001953125,
+                "offset": -2,
+                "unit": "Nm"
+            }
+        },
+        {
+            "name": "Message counter",
+            "description": "Increments by 1 for each message sent.",
+            "offset": 32,
+            "length": 4,
+            "receivers": [ "EPS" ]
+        },
+        {
+            "name": "CRC",
+            "description": "CRC-checksum byte 1 to 5 according to SAE J1850.",
+            "offset": 40,
+            "length": 8,
+            "receivers": [ "EPS" ]
+        }
+    ]
+}
