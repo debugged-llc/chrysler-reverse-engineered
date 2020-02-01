@@ -1,6 +1,6 @@
 # Vehicle Message Matrix
 
-Each folder contains represents the electrical architecture.
+Each folder represents the electrical architecture.
 
 *powernet*: The Powernet architucture.  This includes the 300, Grand Cherokee, and Pacifica.
 
